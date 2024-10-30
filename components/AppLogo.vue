@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p class="text-3xl font-bold">d.lhw</p>
+    <NuxtLink to="/" class="text-2xl font-bold">d.lhw</NuxtLink>
   </div>
 </template>
