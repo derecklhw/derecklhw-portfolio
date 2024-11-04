@@ -49,15 +49,11 @@
 </template>
 
 <script setup lang="ts">
-interface NavMenuItem {
-  name: string;
-  href: string;
-  blank: boolean;
-}
+import type { NavMenuItem } from "../types";
 
 const navMenu: NavMenuItem[] = [
   { name: "About", href: "/", blank: false },
-  { name: "Talks", href: "/talks", blank: false },
+  { name: "Events", href: "/events", blank: false },
   { name: "Projects", href: "/projects", blank: false },
   { name: "Blogs", href: "/blogs", blank: false },
   {
