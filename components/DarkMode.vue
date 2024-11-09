@@ -1,22 +1,21 @@
 <template>
-  <div>
-    <div
-      class="hover:cursor-pointer"
-      @click="setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')"
-    >
-      <!-- TODO: bug in darkmode with icon -->
-      <IconsSunSolid v-if="$colorMode.value == 'dark'" :class="sizeClass" />
-      <IconsMoonSolid v-else :class="sizeClass" />
-    </div>
-  </div>
+  <button
+    @click="setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')"
+  >
+    <!-- TODO: fix bug in dark mode with icon, should be sun icon but is moon icon -->
+    <IconsSunSolid v-if="isDark" class="size-6" />
+    <IconsMoonSolid v-else class="size-6" />
+  </button>
 </template>
 <script setup lang="ts">
+import { computed } from "vue";
 type Theme = "light" | "dark";
-defineProps<{
-  sizeClass?: string;
-}>();
+
+const colorMode = useColorMode();
+
+const isDark = computed(() => colorMode.value === "dark");
 
 const setColorTheme = (newTheme: Theme) => {
-  useColorMode().preference = newTheme;
+  colorMode.preference = newTheme;
 };
 </script>
