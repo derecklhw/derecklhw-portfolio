@@ -7,13 +7,13 @@
 
       <p class="text-lg md:text-2xl">
         Hi, I'm a full stack software engineer with 2 years of experience based
-        in Mauritius. A tech savvy with a love for Linux (''>
+        in Mauritius and a tech savvy with a love for Linux (''>
       </p>
     </div>
     <div class="flex flex-col gap-y-4 my-12">
       <p class="text-2xl md:text-4xl font-medium">Events</p>
       <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-x-0 md:gap-x-4 gap-y-4 md:gap-y-0"
+        class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-x-0 md:gap-x-6 gap-y-4"
       >
         <EventCard
           v-for="eventInfo in eventInfoList"
@@ -21,9 +21,10 @@
           :eventInfo="eventInfo"
         />
       </div>
-      <!-- <div class="flex flex-col gap-y-4 my-12">
+      <div class="flex flex-col gap-y-4 my-12">
         <p class="text-2xl md:text-4xl font-medium">Projects</p>
-      </div> -->
+        <p class="text-lg md:text-xl">Coming soon... Looking for UI ideas</p>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +35,7 @@ const eventInfoList = ref<EventInfo[]>([
   {
     date: "23 Oct 2024",
     title: "Skyrocket your gitworkflow",
-    description: "Speaker at this meetup",
+    description: "Speaker",
     event_link: "google.com",
     slides_link: "google.com",
     name: "Frontend.mu Meetup",
@@ -43,7 +44,7 @@ const eventInfoList = ref<EventInfo[]>([
   {
     date: "23 Oct 2024",
     title: "Lighting Talk - Git Diffing Algorithm",
-    description: "Speaker at this meetup",
+    description: "",
     event_link: "google.com",
     slides_link: "google.com",
     name: "Developers Conference 2024",
@@ -51,11 +52,20 @@ const eventInfoList = ref<EventInfo[]>([
   },
   {
     date: "23 Oct 2024",
-    title: "Lighting Talk - Git Diffing Algorithm",
-    description: "Speaker at this meetup",
+    title: "Winner - 4th Edition of DigiCup 2024",
+    description: "Attendee",
     event_link: "google.com",
     slides_link: "google.com",
-    name: "Developers Conference 2024",
+    name: "FINAM DigiCup 2024",
+    location: "Mauritius",
+  },
+  {
+    date: "23 Oct 2024",
+    title: "Winner - 4th Edition of DigiCup 2024",
+    description: "Attendee",
+    event_link: "google.com",
+    slides_link: "google.com",
+    name: "FINAM DigiCup 2024",
     location: "Mauritius",
   },
 ]);
