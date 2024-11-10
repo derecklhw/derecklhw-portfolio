@@ -1,17 +1,14 @@
 <template>
-  <div class="flip-card h-56 bg-transparent">
-    <div class="flip-card-inner shadow-2xl h-full w-full relative">
-      <!-- TODO: add a button to flip the card on mobile -->
+  <div class="flip-card h-56 bg-transparent min-w-80 md:min-w-96">
+    <div class="flip-card-inner h-full relative">
       <div class="flip-card-front border-white dark:border-slate-950">
         <div
-          class="w-full h-full bg-cover flex justify-center items-center text-center"
+          class="w-full h-full bg-cover relative"
           style="background-image: url('/test.jpeg')"
         >
-          <p
-            class="border-2 rounded border-slate-950 dark:border-white shadow-inner bg-white dark:bg-slate-950 px-2 py-1 font-semibold"
-          >
-            {{ eventInfo.title }}
-          </p>
+          <IconsAutorenewRounded
+            class="md:hidden absolute top-2 right-1 size-8 hover:cursor-pointer text-white"
+          />
         </div>
       </div>
       <div
@@ -29,11 +26,11 @@
           </div>
           <div class="flex-none">
             <div
-              class="flex justify-start text-sm md:text-base gap-x-3 underline font-light"
+              class="flex justify-start text-sm md:text-base gap-x-3 underline font-light mb-1"
             >
+              <a :href="eventInfo.event_link">Event link</a>
               <a :href="eventInfo.slides_link">Slides</a>
               <a :href="eventInfo.event_link">Blog</a>
-              <a :href="eventInfo.event_link">Event link</a>
             </div>
           </div>
           <div class="flex-none">

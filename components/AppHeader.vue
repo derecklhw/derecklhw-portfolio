@@ -35,6 +35,12 @@
         class="flex flex-col gap-y-6 h-full items-center justify-center pb-12 uppercase text-xl font-medium"
       >
         <NuxtLink
+          class="lowercase font-bold text-3xl"
+          to="/"
+          @click="hidePopover"
+          >d.lhw</NuxtLink
+        >
+        <NuxtLink
           v-for="item in navMenu"
           :key="item.name"
           :to="item.href"
@@ -52,7 +58,7 @@
 import type { NavMenuItem } from "../types";
 
 const navMenu: NavMenuItem[] = [
-  { name: "About", href: "/", blank: false },
+  { name: "About", href: "/about", blank: false },
   { name: "Events", href: "/events", blank: false },
   { name: "Projects", href: "/projects", blank: false },
   { name: "Blogs", href: "/blogs", blank: false },

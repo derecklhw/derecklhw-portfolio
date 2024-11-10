@@ -11,20 +11,21 @@
       </p>
     </div>
     <div class="flex flex-col gap-y-4 my-12">
-      <p class="text-2xl md:text-4xl font-medium">Events</p>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-x-0 md:gap-x-6 gap-y-4"
-      >
+      <p class="text-2xl md:text-3xl font-medium">Recent Events</p>
+      <div class="flex overflow-x-auto md:overflow-hidden gap-x-6 py-2">
         <EventCard
           v-for="eventInfo in eventInfoList"
           :key="eventInfo.title"
           :eventInfo="eventInfo"
         />
       </div>
-      <div class="flex flex-col gap-y-4 my-12">
-        <p class="text-2xl md:text-4xl font-medium">Projects</p>
-        <p class="text-lg md:text-xl">Coming soon... Looking for UI ideas</p>
-      </div>
+      <p class="text-base md:text-lg">
+        See More <NuxtLink class="underline" to="/events">Events</NuxtLink>
+      </p>
+    </div>
+    <div class="flex flex-col gap-y-4 my-12">
+      <p class="text-2xl md:text-3xl font-medium">Projects</p>
+      <p class="text-lg md:text-xl">Coming soon... Looking for UI ideas</p>
     </div>
   </div>
 </template>
