@@ -1,9 +1,7 @@
 <template>
   <header class="flex justify-between items-end">
-    <NuxtLink to="/" class="text-2xl font-bold p-0">d.lhw</NuxtLink>
-    <nav
-      class="hidden md:flex gap-x-6 items-end lowercase font-medium text-base"
-    >
+    <NuxtLink to="/" class="text-2xl font-bold">d.lhw</NuxtLink>
+    <nav class="hidden md:flex gap-x-6 lowercase font-medium text-base">
       <NuxtLink
         v-for="item in navMenu"
         :key="item.name"
@@ -17,7 +15,7 @@
     <nav class="md:hidden flex gap-x-2 items-end">
       <DarkMode />
       <button popovertarget="mypopover" popovertargetaction="show">
-        <IconsPlusSolid class="size-6" />
+        <Icon name="heroicons-solid:plus" class="size-6" />
       </button>
     </nav>
     <div
@@ -28,7 +26,7 @@
       <div class="h-full flex flex-col px-8 py-8">
         <div class="flex-none flex justify-end">
           <button popovertarget="mypopover" popovertargetaction="hidden">
-            <IconsXSolid class="size-6" />
+            <Icon name="heroicons-solid:x" class="size-6" />
           </button>
         </div>
 
