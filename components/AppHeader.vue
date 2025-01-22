@@ -10,10 +10,10 @@
       >
         {{ item.name }}
       </NuxtLink>
-      <DarkMode />
+      <DarkModeBtn />
     </nav>
     <nav class="md:hidden flex gap-x-2 items-end">
-      <DarkMode />
+      <DarkModeBtn />
       <button popovertarget="mypopover" popovertargetaction="show">
         <Icon name="heroicons-solid:plus" class="size-6" />
       </button>
