@@ -74,6 +74,14 @@
           </NuxtLink>
           <NuxtLink
             class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
+            to="https://gitlab.com/derecklhw"
+            target="_blank"
+          >
+            <Icon name="uil:gitlab" size="24" class="mr-1" />
+            <p class="font-semibold">Gitlab</p>
+          </NuxtLink>
+          <NuxtLink
+            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
             to="https://www.linkedin.com/in/derecklhw/"
             target="_blank"
           >
