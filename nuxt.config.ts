@@ -18,4 +18,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
+  icon: {
+    customCollections: [{ prefix: "my-icons", dir: "./assets/my-icons" }],
+  },
 });
