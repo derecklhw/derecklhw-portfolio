@@ -23,6 +23,12 @@
 <script setup lang="ts">
 import type { SocialMediaItem } from "~/types";
 
+const store = useProjectsStore();
+
+onMounted(() => {
+  store.fetchProjects();
+});
+
 const projectHosts: SocialMediaItem[] = [
   {
     name: "Github",

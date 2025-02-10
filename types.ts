@@ -14,3 +14,10 @@ export interface CompanyInfoItem {
   icon: string;
   url: string;
 }
+
+export interface ProjectItem {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+}
