@@ -4,13 +4,22 @@
     style="height: 28rem"
   >
     <img
-      src="https://idobe.engineering.ualberta.ca/wp-content/plugins/elementor/assets/images/placeholder.png"
+      :src="projectDetails.image"
       alt="Project Image"
       class="w-full h-80 object-cover"
     />
     <div class="p-4">
-      <h3 class="text-xl font-bold">Project Name</h3>
-      <p>Project Description</p>
+      <h3 class="text-xl font-bold">{{ projectDetails.name }}</h3>
+      <p>{{ projectDetails.description }}</p>
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import type { ProjectItem } from "~/types";
+
+interface Props {
+  projectDetails: ProjectItem;
+}
+
+defineProps<Props>();
+</script>

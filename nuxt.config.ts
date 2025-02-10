@@ -26,4 +26,9 @@ export default defineNuxtConfig({
   icon: {
     customCollections: [{ prefix: "my-icons", dir: "./assets/my-icons" }],
   },
+  runtimeConfig: {
+    public: {
+      githubPersonalAccessToken: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+    },
+  },
 });
