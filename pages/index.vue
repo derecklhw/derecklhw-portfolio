@@ -12,97 +12,60 @@
         <div class="flex gap-x-1">
           <p>Working at</p>
           <NuxtLink
-            to="https://www.dodobird.ai/"
+            v-for="item in [workingAt]"
+            :to="item.url"
             target="_blank"
             class="bg-slate-200 dark:bg-slate-900 px-2 flex"
           >
-            <Icon name="my-icons:dodobird" size="22" class="mr-1 mt-1" />
-            <p>dodobird.ai</p>
+            <Icon :name="item.icon" size="22" class="mr-1 mt-1" />
+            <p>{{ item.name }}</p>
           </NuxtLink>
         </div>
         <div class="flex flex-col md:flex-row gap-x-1">
           <p>Volunteer at</p>
           <div class="flex flex-wrap gap-y-1 md:gap-x-1">
             <NuxtLink
-              to="https://frontend.mu/"
+              v-for="item in volunteerAt"
+              :to="item.url"
               target="_blank"
               class="bg-slate-200 dark:bg-slate-900 px-2 flex"
             >
-              <Icon name="my-icons:frontendmu" size="22" class="mr-1 mt-1" />
-              <p>Frontend.mu</p>
-            </NuxtLink>
-            <NuxtLink
-              to="https://www.mscc.mu/"
-              target="_blank"
-              class="bg-slate-200 dark:bg-slate-900 px-2 flex"
-            >
-              <Icon name="my-icons:mscc" size="22" class="mr-1 mt-1" />
-              <p>Mauritius Software Craftsmanship Community</p>
+              <Icon :name="item.icon" size="22" class="mr-1 mt-1" />
+              <p>{{ item.name }}</p>
             </NuxtLink>
           </div>
         </div>
       </div>
-      <!-- <p>
-        I enjoy giving talks and write blog posts about open source, coding,
-        tutorials, etc.
-      </p> -->
-      <p>I enjoy giving talks about open source, coding, tutorials, etc.</p>
+
       <p>
+        I enjoy giving talks
+        <!-- and write blogs posts -->about open source, coding, tutorials, etc.
         Outside of programming, I enjoy working out, hiking and recently
-        starting doing photography.
-        <!-- Some of my photos can be found on Instagram. -->Right now I live in
+        photography.
+        <!-- Some of my photos can be found on Instagram. -->
+      </p>
+      <p>
+        Right now I live in
         <NuxtLink
-          class="underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
+          class="font-normal underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
           target="_blank"
           to="https://fr.wikipedia.org/wiki/Maurice_(pays)"
         >
           Mauritius</NuxtLink
-        >
-        and if you are around or traveling to, feel free to reach me out, we
-        could have some ☕ or work together.
+        >. If you are around or thinking of traveling to, feel free to reach me
+        out, we could have some ☕ or 🧗together.
       </p>
       <div class="flex flex-col gap-y-6">
         <p>Find me on</p>
         <div class="flex flex-wrap gap-x-3">
           <NuxtLink
+            v-for="item in socialMedia"
             class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
-            to="https://github.com/derecklhw"
+            :to="item.url"
             target="_blank"
           >
-            <Icon name="uil:github" size="24" class="mr-1" />
-            <p class="font-semibold">Github</p>
-          </NuxtLink>
-          <NuxtLink
-            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
-            to="https://gitlab.com/derecklhw"
-            target="_blank"
-          >
-            <Icon name="uil:gitlab" size="24" class="mr-1" />
-            <p class="font-semibold">Gitlab</p>
-          </NuxtLink>
-          <NuxtLink
-            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
-            to="https://www.linkedin.com/in/derecklhw/"
-            target="_blank"
-          >
-            <Icon name="uil:linkedin" size="24" class="mr-1" />
-            <p class="font-semibold">Linkedin</p>
-          </NuxtLink>
-          <NuxtLink
-            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
-            to="https://x.com/derecklhw"
-            target="_blank"
-          >
-            <Icon name="prime:twitter" size="24" class="mr-1" />
-            <p class="font-semibold">Twitter</p>
-          </NuxtLink>
-          <NuxtLink
-            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
-            to="https://www.instagram.com/dereck_lhw/"
-            target="_blank"
-          >
-            <Icon name="uil:instagram" size="24" class="mr-1" />
-            <p class="font-semibold">Instagram</p>
+            <Icon :name="item.icon" size="24" class="mr-1" />
+            <p class="font-semibold">{{ item.name }}</p>
           </NuxtLink>
         </div>
         <p>
@@ -117,4 +80,53 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { SocialMediaItem, CompanyInfoItem } from "~/types";
+
+const socialMedia: SocialMediaItem[] = [
+  {
+    name: "Github",
+    icon: "uil:github",
+    url: "https://github.com/derecklhw",
+  },
+  // {
+  //   name: "Gitlab",
+  //   icon: "uil:gitlab",
+  //   url: "https://gitlab.com/derecklhw",
+  // },
+  {
+    name: "Linkedin",
+    icon: "uil:linkedin",
+    url: "https://www.linkedin.com/in/derecklhw",
+  },
+  // {
+  //   name: "Twitter",
+  //   icon: "prime:twitter",
+  //   url: "https://x.com/derecklhw",
+  // },
+  // {
+  //   name: "Instagram",
+  //   icon: "uil:instagram",
+  //   url: "https://www.instagram.com/dereck_lhw",
+  // },
+];
+
+const workingAt: CompanyInfoItem = {
+  name: "dodobird.ai",
+  icon: "my-icons:dodobird",
+  url: "https://www.dodobird.ai/",
+};
+
+const volunteerAt: CompanyInfoItem[] = [
+  {
+    name: "Frontend.mu",
+    icon: "my-icons:frontendmu",
+    url: "https://frontend.mu/",
+  },
+  {
+    name: "Mauritius Software Craftsmanship Community",
+    icon: "my-icons:mscc",
+    url: "https://www.mscc.mu/",
+  },
+];
+</script>

@@ -4,11 +4,8 @@
       <h2 class="text-5xl font-bold">Projects</h2>
       <p>Projects that I created or maintaining.</p>
       <div class="flex gap-x-5">
-        <NuxtLink to="https://github.com/derecklhw" target="_blank">
-          <Icon name="uil:github" size="3em" />
-        </NuxtLink>
-        <NuxtLink to="https://gitlab.com/derecklhw" target="_blank">
-          <Icon name="uil:gitlab" size="3em" />
+        <NuxtLink v-for="item in projectHosts" :to="item.url" target="_blank">
+          <Icon :name="item.icon" size="3em" />
         </NuxtLink>
       </div>
     </div>
@@ -23,4 +20,19 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { SocialMediaItem } from "~/types";
+
+const projectHosts: SocialMediaItem[] = [
+  {
+    name: "Github",
+    icon: "uil:github",
+    url: `https://github.com/derecklhw`,
+  },
+  // {
+  //   name: "Gitlab",
+  //   icon: "uil:gitlab",
+  //   url: `https://gitlab.com/derecklhw`,
+  // },
+];
+</script>

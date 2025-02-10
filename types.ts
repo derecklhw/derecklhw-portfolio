@@ -1,5 +1,16 @@
 export interface NavMenuItem {
   name: string;
-  href: string;
-  blank: boolean;
+  url: string;
+}
+
+export interface SocialMediaItem {
+  name: string;
+  icon: string; // TODO: find a more clever way to handle this before connecting supabase :(
+  url: string;
+}
+
+export interface CompanyInfoItem {
+  name: string;
+  icon: string;
+  url: string;
 }

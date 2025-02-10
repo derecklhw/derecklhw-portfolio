@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 p {
-  @apply text-lg font-extralight;
+  @apply text-lg font-light;
 }

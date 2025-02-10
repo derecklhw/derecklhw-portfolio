@@ -2,14 +2,12 @@
   <header class="flex justify-between items-end">
     <NuxtLink to="/" class="text-2xl font-bold">d.lhw</NuxtLink>
     <nav class="hidden md:flex gap-x-6 lowercase font-medium text-base">
-      <NuxtLink
-        v-for="item in navMenu"
-        :key="item.name"
-        :to="item.href"
-        :target="item.blank ? '_blank' : '_self'"
-      >
+      <NuxtLink v-for="item in navMenu" :to="item.url">
         {{ item.name }}
       </NuxtLink>
+      <NuxtLink to="https://derecklhw.github.io/derecklhw-cv/" target="_blank"
+        >Resume</NuxtLink
+      >
       <DarkModeBtn />
     </nav>
     <nav class="md:hidden flex gap-x-2 items-end">
@@ -39,15 +37,15 @@
             @click="hidePopover"
             >d.lhw</NuxtLink
           >
-          <NuxtLink
-            v-for="item in navMenu"
-            :key="item.name"
-            :to="item.href"
-            :target="item.blank ? '_blank' : '_self'"
-            @click="hidePopover"
-          >
+          <NuxtLink v-for="item in navMenu" :to="item.url" @click="hidePopover">
             {{ item.name }}
           </NuxtLink>
+          <NuxtLink
+            to="https://derecklhw.github.io/derecklhw-cv/"
+            target="_blank"
+            @click="hidePopover"
+            >Resume</NuxtLink
+          >
         </nav>
       </div>
     </div>
@@ -58,14 +56,9 @@
 import type { NavMenuItem } from "../types";
 
 const navMenu: NavMenuItem[] = [
-  { name: "Blogs", href: "/blogs", blank: false },
-  { name: "Projects", href: "/projects", blank: false },
-  { name: "Talks", href: "/talks", blank: false },
-  {
-    name: "Resume",
-    href: "https://derecklhw.github.io/derecklhw-cv/",
-    blank: true,
-  },
+  { name: "Blogs", url: "/blogs" },
+  { name: "Projects", url: "/projects" },
+  { name: "Talks", url: "/talks" },
 ];
 
 const hidePopover = () => {
