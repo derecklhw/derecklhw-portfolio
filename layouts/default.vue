@@ -1,9 +1,9 @@
 <template>
   <div
-    class="h-screen flex flex-col dark:text-white dark:bg-slate-950 overflow-y-scroll"
+    class="h-screen flex flex-col dark:text-white dark:bg-black overflow-y-scroll"
   >
     <AppHeader class="px-8 md:px-10 py-6 md:py-8" />
-    <div class="flex-1 px-8 md:px-10 py-4">
+    <div class="flex-1 px-8 md:px-10 py-6">
       <slot />
     </div>
     <AppFooter class="py-6" />

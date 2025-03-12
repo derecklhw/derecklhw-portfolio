@@ -13,13 +13,13 @@
     <nav class="md:hidden flex gap-x-2 items-end">
       <DarkModeBtn />
       <button popovertarget="mypopover" popovertargetaction="show">
-        <Icon name="heroicons-solid:plus" class="size-6" />
+        <Icon name="heroicons-solid:bars-3" class="size-6" />
       </button>
     </nav>
     <div
       id="mypopover"
       popover
-      class="md:hidden h-dvh w-full p-0 dark:text-white dark:bg-slate-950"
+      class="md:hidden h-dvh w-full p-0 dark:text-white dark:bg-black"
     >
       <div class="h-full flex flex-col px-8 py-8">
         <div class="flex-none flex justify-end">

@@ -1,13 +1,10 @@
 <template>
-  <div class="w-full md:w-5/12 m-auto flex flex-col space-y-8">
+  <div class="w-full lg:w-11/12 2xl:w-7/12 m-auto flex flex-col space-y-8">
     <div>
-      <h2 class="text-4xl font-extrabold">Dereck Lam Hon Wah</h2>
+      <h2 class="text-4xl font-extrabold">I'm Dereck Lam Hon Wah</h2>
+      <p>A Full-Stack Software Engineer and Open-source Enthusiast</p>
     </div>
     <div class="flex flex-col gap-y-8">
-      <p>
-        Hey, I am Dereck Lam Hon Wah, a full-stack software engineer and open
-        source enthusiast.
-      </p>
       <div class="flex flex-col gap-y-1">
         <div class="flex gap-x-1">
           <p>Working at</p>
@@ -15,20 +12,20 @@
             v-for="item in [workingAt]"
             :to="item.url"
             target="_blank"
-            class="bg-slate-200 dark:bg-slate-900 px-2 flex"
+            class="bg-zinc-200 dark:bg-zinc-900 px-2 flex"
           >
             <Icon :name="item.icon" size="22" class="mr-1 mt-1" />
             <p>{{ item.name }}</p>
           </NuxtLink>
         </div>
         <div class="flex flex-col md:flex-row gap-x-1">
-          <p>Volunteer at</p>
+          <p>Volunteering at</p>
           <div class="flex flex-wrap gap-y-1 md:gap-x-1">
             <NuxtLink
               v-for="item in volunteerAt"
               :to="item.url"
               target="_blank"
-              class="bg-slate-200 dark:bg-slate-900 px-2 flex"
+              class="bg-zinc-200 dark:bg-zinc-900 px-2 flex"
             >
               <Icon :name="item.icon" size="22" class="mr-1 mt-1" />
               <p>{{ item.name }}</p>
@@ -38,29 +35,30 @@
       </div>
 
       <p>
-        I enjoy giving talks
-        <!-- and write blogs posts -->about open source, coding, tutorials, etc.
-        Outside of programming, I enjoy working out, hiking and recently
-        photography.
+        I love giving talks
+        <!-- and write blogs posts -->about open source, coding, tutorials,
+        etc... And outside of programming, I enjoy working out, hiking and
+        recently photography.
         <!-- Some of my photos can be found on Instagram. -->
       </p>
       <p>
         Right now I live in
         <NuxtLink
-          class="font-normal underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
+          class="font-normal underline underline-offset-4 decoration-zinc-600 hover:decoration-zinc-900 dark:hover:decoration-zinc-100"
           target="_blank"
           to="https://fr.wikipedia.org/wiki/Maurice_(pays)"
         >
           Mauritius</NuxtLink
-        >. If you are around or thinking of traveling to, feel free to reach me
+        >
+        and if you are around or thinking of traveling to, feel free to reach
         out, we could have some ☕ or 🧗together.
       </p>
-      <div class="flex flex-col gap-y-6">
+      <div class="flex flex-col gap-y-3">
         <p>Find me on</p>
         <div class="flex flex-wrap gap-x-3">
           <NuxtLink
             v-for="item in socialMedia"
-            class="flex underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
+            class="flex underline underline-offset-4 decoration-zinc-600 hover:decoration-zinc-900 dark:hover:decoration-zinc-100"
             :to="item.url"
             target="_blank"
           >
@@ -72,7 +70,7 @@
           Or mail me at
           <a
             href="mailto:dereck.lamhonwah@gmail.com"
-            class="underline underline-offset-4 decoration-slate-700 hover:decoration-slate-100"
+            class="underline underline-offset-4 decoration-zinc-600 hover:decoration-zinc-900 dark:hover:decoration-zinc-100"
             ><code> dereck.lamhonwah@gmail.com </code></a
           >
         </p>

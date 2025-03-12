@@ -18,6 +18,6 @@ export interface CompanyInfoItem {
 export interface ProjectItem {
   name: string;
   description: string;
-  image: string;
   url: string;
+  language: string;
 }
