@@ -20,9 +20,8 @@ export const useProjectsStore = defineStore("projects", () => {
     projects.value = response.data.map((project: any) => ({
       name: project.name,
       description: project.description,
-      image:
-        "https://idobe.engineering.ualberta.ca/wp-content/plugins/elementor/assets/images/placeholder.png",
       url: project.html_url,
+      language: project.language,
     }));
   }
   return { projects, fetchProjects };

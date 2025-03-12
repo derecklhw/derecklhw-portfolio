@@ -1,15 +1,13 @@
 <template>
-  <div class="w-full m-auto">
-    <div class="flex flex-col items-center gap-y-4">
-      <h2 class="text-5xl font-bold">Projects</h2>
-      <p>Projects that I created or maintaining.</p>
-      <div class="flex gap-x-5">
-        <NuxtLink v-for="item in projectHosts" :to="item.url" target="_blank">
-          <Icon :name="item.icon" size="3em" />
-        </NuxtLink>
-      </div>
+  <!-- <div class="w-full m-auto"> -->
+  <div class="w-full lg:w-11/12 2xl:w-7/12 m-auto flex flex-col space-y-8">
+    <div class="flex flex-col gap-y-2">
+      <h2 class="text-4xl font-bold">My Projects</h2>
+      <p class="text-lg">
+        Discover the projects that I am currently contributing to or created.
+      </p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
       <ProjectCard
         v-for="project in store.projects"
         :projectDetails="project"
