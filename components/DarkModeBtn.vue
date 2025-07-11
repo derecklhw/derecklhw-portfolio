@@ -2,9 +2,12 @@
   <button
     @click="setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')"
   >
-    <!-- TODO: fix bug in dark mode with icon, should be sun icon but is moon icon -->
-    <Icon name="heroicons-solid:sun" v-if="isDark" class="size-6" />
-    <Icon name="heroicons-solid:moon" v-else class="size-6" />
+    <ClientOnly>
+      <Icon
+        :name="isDark ? 'heroicons-solid:sun' : 'heroicons-solid:moon'"
+        class="size-6"
+      />
+    </ClientOnly>
   </button>
 </template>
 <script setup lang="ts">

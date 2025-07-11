@@ -10,6 +10,8 @@ export default defineNuxtConfig({
   ],
   colorMode: {
     classSuffix: "",
+    preference: "system",
+    // fallback: "light",
   },
   tailwindcss: {
     cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
